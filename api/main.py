@@ -12,9 +12,13 @@ CORS(app)
 # make api
 api = Api(app)
 
+# base URL
+baseUrl = "/timeline_api"
+
 # endpoint routing
-api.add_resource(RootEndpoint, "/")
-api.add_resource(GetUsers, "/users")
+api.add_resource(RootEndpoint, baseUrl + "/")
+api.add_resource(GetUsers, baseUrl + "/users")
+api.add_resource(UpdateLocation_GM, baseUrl + "/update_gm")
 
 # run app
 if __name__ == "__main__":
