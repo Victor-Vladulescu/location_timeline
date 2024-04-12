@@ -12,7 +12,9 @@ def getUsers():
             for u in query:
                 users.append({
                     'id': u.id,
+                    'google_id': u.google_id,
                     'name': u.name,
+                    'password': u.password,
                     'last_ping': u.last_ping
                 })
 
@@ -24,13 +26,14 @@ def getUsers():
 def updateLocation_GM(users_location):
     with engine.connect() as conn:
         try:
-            query_text = "INSERT INTO public.history (user_name, ping, latitude, longitude, accuracy, battery, charging) VALUES "
+            query_text = "INSERT INTO public.history (user_id, ping, latitude, longitude, accuracy, battery, charging) VALUES "
             users = getUsers()
             new_pings = []
 
             for u in users:
                 ul = {}
 
+                # TODO use google_id instead of name
                 # find current user
                 for x in users_location:
                     if u['name'] == x['name']:

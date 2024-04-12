@@ -17,9 +17,4 @@ baseUrl = "/timeline_api"
 
 # endpoint routing
 api.add_resource(RootEndpoint, baseUrl + "/")
-api.add_resource(GetUsers, baseUrl + "/users")
 api.add_resource(UpdateLocation_GM, baseUrl + "/update_gm")
-
-# run app
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8001)
