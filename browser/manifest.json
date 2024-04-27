@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "icons": {
+    "96": "icons/map_96.png"
+  },
+  "permissions": ["tabs", "activeTab", "webRequest", "webRequestBlocking", "https://www.google.com/maps/*"],
+  "background": {
+    "scripts": ["scripts/timeline.js"],
+    "persistent": true
+  }
+}
