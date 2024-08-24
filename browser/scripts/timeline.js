@@ -28,7 +28,7 @@ function listener(details) {
       });
 }
 
-// listen for requsts matching this URL
+// listen for requests matching this URL
 chrome.webRequest.onBeforeRequest.addListener(
     listener,
     {urls: ["https://www.google.com/maps/rpc/locationsharing/*"]},

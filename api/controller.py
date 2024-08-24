@@ -28,7 +28,7 @@ class UpdateLocation_GM(Resource):
             # can we at least get obligatory data?
             try:
                 user = {
-                    "name": i[0][3],
+                    "google_id": i[0][0],
                     "latitude": i[1][1][2],
                     "longitude": i[1][1][1],
                     "ping": i[1][2] // 1000  # from milliseconds to seconds

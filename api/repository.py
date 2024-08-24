@@ -33,10 +33,9 @@ def updateLocation_GM(users_location):
             for u in users:
                 ul = {}
 
-                # TODO use google_id instead of name
                 # find current user
                 for x in users_location:
-                    if u['name'] == x['name']:
+                    if str(u['google_id']) == x['google_id']:
                         ul = x
                         break
 
